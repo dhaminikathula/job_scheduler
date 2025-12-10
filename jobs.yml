@@ -1,0 +1,17 @@
+jobs:
+  - name: job1
+    command: "echo Job 1 running..."
+    interval: 5
+
+  - name: job2
+    command: "echo Job 2 running..."
+    interval: 3
+
+  - name: job3
+    command: "echo Job 3 running..."
+    interval: 10
+    depends_on: ["job1", "job2"]
+
+  - name: job4
+    command: "python sample_task.py"
+    interval: 8
